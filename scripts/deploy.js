@@ -8,8 +8,8 @@ const { interface, bytecode } = require(contractPath)
 
 // 2. 配置 provider
 const provider = new HDWalletProvider(
-  'witness improve busy opinion addict sun gossip hedgehog common glass dignity primary',
-  'https://rinkeby.infura.io/CqCd0QgCozHBEk19ub2M'
+  'amount oak season rookie meadow eternal remove dynamic foster special trick produce',
+  'https://rinkeby.infura.io/MrQ30W7IqX4mR23RU8c3'
 )
 
 // 3. 初始化 web3 实例
@@ -22,9 +22,9 @@ const web3 = new Web3(provider)
   // 5. 创建合约实例并部署
   console.time('Contract-deploy')
   const result = await new web3.eth.Contract(JSON.parse(interface))
-    .deploy({ data: bytecode, arguments: ['AUDI'] })
+    .deploy({ data: `0x${bytecode}`, arguments: ['AUDI'] })
     .send({ from: accounts[0], gas: '1000000' })
   console.timeEnd('Contract-deploy')
 
-  console.log('合约部署成功：', result.opinion.address)
+  console.log('合约部署成功：', result.options.address)
 })()
