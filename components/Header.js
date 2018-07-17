@@ -42,13 +42,11 @@ class Header extends React.Component {
             <Typography variant="title" color="inherit" className={classes.brand}>
               众筹 DApp
             </Typography>
-            <p className={classes.flexContainer}>
+            <Typography variant="title" color="inherit" className={classes.flexContainer}>
               <a href="/" className={classes.anchor}>
-                <Typography variant="title" color="inherit">
-                  项目列表
-                </Typography>
+                项目列表
               </a>
-            </p>
+            </Typography>
             <Link route="/projects/create">
               <Button variant="raised" color="primary">
                 发起项目
