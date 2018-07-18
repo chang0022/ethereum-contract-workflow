@@ -84,8 +84,12 @@ contract Project {
         newBalance = address(this).balance.add(msg.value);
         require(newBalance <= goal);
 
-        investors[msg.sender] = msg.value;
-        investorCount += 1;
+        if (investors[msg.sender] > 0) {
+            investors[msg.sender] += msg.value;
+        } else {
+           investors[msg.sender] = msg.value;
+           investorCount += 1; 
+        }
     }
 
     function createPayment(string _description, uint _amount, address _receiver) ownerOnly public {
