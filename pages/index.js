@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid, Button, Typography, Card, CardContent, CardActions, LinearProgress } from '@material-ui/core'
-// import { Link } from '../routes'
 import web3 from '../libs/web3'
 import ProjectList from '../libs/projectList'
 import Project from '../libs/project'
@@ -46,13 +45,13 @@ class Index extends React.Component {
     return (
       <Layout>
         <Grid container spacing={16}>
-          {projects.map(this.rendrProject)}
+          {projects.map(this.renderProject)}
         </Grid>
       </Layout>
     )
   }
 
-  rendrProject(project) {
+  renderProject(project) {
     const progress = (project.balance / project.goal) * 100
 
     return (

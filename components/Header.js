@@ -1,8 +1,7 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography, Button } from '@material-ui/core'
+import Link from './Link'
 import { withStyles } from '@material-ui/core/styles'
-
-import { Link } from '../routes'
 
 const styles = {
   wrapper: {
