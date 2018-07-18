@@ -1,11 +1,12 @@
 import React from 'react'
 import { Grid, Button, Typography, Card, CardContent, CardActions, LinearProgress } from '@material-ui/core'
-import { Link } from '../routes'
+// import { Link } from '../routes'
 import web3 from '../libs/web3'
 import ProjectList from '../libs/projectList'
 import Project from '../libs/project'
 import Layout from '../components/Layout'
 import InfoBlock from '../components/InfoBlock'
+import Link from '../components/Link'
 
 class Index extends React.Component {
   static async getInitialProps({ req }) {
@@ -76,7 +77,7 @@ class Index extends React.Component {
                 立即投资
               </Button>
             </Link>
-            <Link route={`/projects/${project.address}`}>
+            <Link route={`/projects/${project.address}`} variant="button">
               <Button size="small" color="secondary">
                 查看详情
               </Button>
