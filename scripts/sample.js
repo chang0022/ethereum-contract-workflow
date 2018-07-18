@@ -1,16 +1,11 @@
 const Web3 = require('web3')
+const config = require('config')
 const HDWalletProvider = require('truffle-hdwallet-provider')
 const ProjectList = require('../compiled/ProjectList.json')
 const address = require('../address.json')
 
-const web3 = new Web3(
-  new HDWalletProvider(
-    'amount oak season rookie meadow eternal remove dynamic foster special trick produce',
-    'https://rinkeby.infura.io/MrQ30W7IqX4mR23RU8c3'
-  )
-)
+const web3 = new Web3(new HDWalletProvider(config.get('hdwallet'), config.get('infuraUrl')))
 const contract = new web3.eth.Contract(JSON.parse(ProjectList.interface), address)
-
 ;(async () => {
   const accounts = await web3.eth.getAccounts()
   console.log(accounts)

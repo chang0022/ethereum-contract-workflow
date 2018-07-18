@@ -1,5 +1,6 @@
 const fs = require('fs-extra')
 const path = require('path')
+const config = require('config')
 const Web3 = require('web3')
 const HDWalletProvider = require('truffle-hdwallet-provider')
 
@@ -8,10 +9,7 @@ const contractPath = path.resolve(__dirname, '../compiled/ProjectList.json')
 const { interface, bytecode } = require(contractPath)
 
 // 2. 配置 provider
-const provider = new HDWalletProvider(
-  'amount oak season rookie meadow eternal remove dynamic foster special trick produce',
-  'https://rinkeby.infura.io/MrQ30W7IqX4mR23RU8c3'
-)
+const provider = new HDWalletProvider(config.get('hdwallet'), config.get('infuraUrl'))
 
 // 3. 初始化 web3 实例
 const web3 = new Web3(provider)
